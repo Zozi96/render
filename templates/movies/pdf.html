@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="{% static 'movies/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'movies/css/bulma.min.css' %}" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p class="fw-bold">Pelicula: {{ movie.name }}</p>
+    <p>Año de lanzamiento: {{ movie.released }}</p>
+
+    <div class="content">
+        <h3>Lista de actores</h1>
+            <ul>
+                {% for i in movie.actors.all %}
+                <li>{{ i }}</li>
+                {% endfor %}
+            </ul>
+    </div>
+
+    <img src="{{ poster }}" alt="">
+
+
+
+    <img src="{{ images.pic }}" alt="">
+
+
+
+
+
+
+</body>
+
+</html>
